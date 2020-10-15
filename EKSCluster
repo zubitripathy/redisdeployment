@@ -1,0 +1,30 @@
+1: Install eksctl
+
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+
+sudo mv /tmp/eksctl /usr/local/bin
+
+2: Update AWS CLI to Version 2
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+3: Set up a Group
+
+Set up a group with the Permissions of:
+
+4: Add a user to the group
+
+
+5: Install kubectl
+
+export RELEASE=1.17
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v$RELEASE/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+
+6: Start the cluster
+
+eksctl create cluster --name fleetman --nodes-min=3
