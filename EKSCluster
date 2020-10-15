@@ -12,7 +12,7 @@ sudo ./aws/install
 
 3: Set up a Group
 
-Set up a group with the Permissions of:
+Set up a group with the required Permissions.
 
 4: Add a user to the group
 
